@@ -51,8 +51,6 @@ scripts/make_graphical_abstract.py  graphical abstracts (EN/TR), 600 dpi,
                                     Calibri-metric type, width <= 1.2 columns
 scripts/additional_controls_patch.py  the three follow-up controls (C2/C3/B31)
 scripts/cpu_scout.py                CPU scouting run of the C2 control
-scripts/push_to_github.sh           first-commit helper (bash)
-scripts/push_to_github.ps1          first-commit helper (Windows PowerShell)
 figures/                            all artwork, vector PDF + PNG at 600 dpi
 tables/                             Tables 1-4 as CSV and LaTeX
 results/manifest.json               environment, configuration, digests, compute
