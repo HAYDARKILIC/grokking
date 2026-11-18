@@ -1,0 +1,152 @@
+{
+  "study": "Nonlinear test of predictions (P2) and (P4) of the grokking weight-decay clock",
+  "source_under_test": "arXiv:2607.23967 (Kim, 2026)",
+  "mode": "full_grid",
+  "environment": {
+    "session_start_utc": "2026-08-21T15:42:21Z",
+    "python": "3.12.13",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "cuda_runtime": "12.8",
+    "cudnn": 91900,
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "gpu_name": "NVIDIA A100-SXM4-40GB",
+    "gpu_capability": "8.0",
+    "gpu_memory_gb": 39.5,
+    "driver_version": "580.82.07",
+    "precision_policy": [
+      "matmul.fp32_precision=ieee",
+      "cudnn.allow_tf32=False",
+      "float32_matmul_precision=highest"
+    ],
+    "train_dtype": "float64"
+  },
+  "determinism": "requested (warn_only=True)",
+  "reference_configuration": {
+    "modulus": 17,
+    "train_fraction": 0.55,
+    "width": 128,
+    "beta": 0.9,
+    "eta": 0.2,
+    "lambda": 0.0003,
+    "init_scale": 1.5,
+    "init_scale_calibrated": true,
+    "decay": "coupled_l2",
+    "activation": "quadratic",
+    "loss": "mean squared error",
+    "biases": false,
+    "batching": "full batch",
+    "split_seed": 12345
+  },
+  "design": {
+    "phase_B": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "moduli": [
+        17,
+        23,
+        31
+      ],
+      "widths": [
+        64,
+        128,
+        256
+      ],
+      "init_scales": [
+        1.0,
+        1.5,
+        2.5
+      ]
+    },
+    "phase_C": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "betas": [
+        0.0,
+        0.5,
+        0.9,
+        0.95
+      ],
+      "decays": [
+        "coupled_l2",
+        "decoupled_wd"
+      ]
+    },
+    "phase_D": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "rescalings": [
+        0.95,
+        0.98,
+        0.99,
+        0.995,
+        0.998,
+        1.0,
+        1.002,
+        1.005,
+        1.01,
+        1.02,
+        1.05
+      ],
+      "probes": [
+        0.5,
+        2.0
+      ],
+      "intervention_step": 1000,
+      "eval_every": 5,
+      "drift_tolerance": 0.001,
+      "jacobian_dtype": "torch.float64"
+    },
+    "max_steps": 400000,
+    "eval_every": 25,
+    "grok_threshold": 0.9,
+    "mem_threshold": 1.0
+  },
+  "integrity": {
+    "runs_jsonl_sha256": "b4806d10b63fe8508ae4613a1df92f9b09edbbb0248b66e77f9e13ebc2b01f80",
+    "runs_jsonl_bytes": 144985738,
+    "n_records": 351
+  },
+  "compute": {
+    "total_gpu_hours": 12.21,
+    "runs": 351
+  },
+  "headline_results": {
+    "phase_A_reproduced": true,
+    "phase_A_delay_ratio": 40.111111111111114,
+    "phase_B_delay_ratio_spread": 42.421243645005184,
+    "phase_C_levels_supporting_P4": 2,
+    "phase_C_levels_tested": 4,
+    "phase_D_theory_rate": 0.0006000000000000001,
+    "phase_D_component_slope_ratio": 1.0017400000000003,
+    "phase_D_accuracy_slope_ratio": 0.5412800000000001,
+    "phase_D_max_train_pred_drift": 0.1058321126313956
+  },
+  "notifications": {
+    "enabled": true,
+    "sent": 29,
+    "failed": 0
+  }
+}

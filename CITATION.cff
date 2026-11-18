@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Grokking on the Weight-Decay Clock — nonlinear test of two exact identities"
+message: "If you use this code or these results, please cite the accompanying article."
+type: software
+authors:
+  - family-names: "Kilic"
+    given-names: "Haydar"
+    orcid: "https://orcid.org/0000-0002-2551-3772"
+    affiliation: "Department of Artificial Intelligence Engineering, Ostim Technical University, Ankara, Turkiye"
+    email: "haydar.kilic@ostimteknik.edu.tr"
+license: MIT
+repository-code: "https://github.com/HAYDARKILIC/grokking"
+keywords:
+  - grokking
+  - delayed generalization
+  - weight decay
+  - heavy-ball momentum
+  - null-space projection
+  - reproducibility

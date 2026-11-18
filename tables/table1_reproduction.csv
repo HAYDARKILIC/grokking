@@ -1,0 +1,5 @@
+quantity,source,measured
+$k_{\mathrm{mem}}$,400,225
+$k(\mathrm{test}=0.5)$,"7,000","6,575"
+$k(\mathrm{test}=0.9)$,"10,500","9,025"
+delay ratio,26,40.1

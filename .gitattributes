@@ -1,0 +1,9 @@
+# Normalise line endings in the repository to LF regardless of platform,
+# so a checkout on Windows does not produce a diff against the committed
+# state. Binary artwork and archives are left untouched.
+* text=auto eol=lf
+
+*.png  binary
+*.pdf  binary
+*.zip  binary
+*.pkl  binary

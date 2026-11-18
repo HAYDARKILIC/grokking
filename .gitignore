@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+env/
+grokking_wd_clock/          # local run tree (data, runs, artifacts)
+runs.jsonl
+*.pt
+*.pkl
+.DS_Store

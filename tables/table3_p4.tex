@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Test of (P4). For each $\beta$ the ratio of grokking iteration counts between decoupled weight decay and coupled $L_2$ is compared with the prediction $(1-\beta)^{-1}$. Intervals are 95\% percentile bootstrap over seeds. The $\beta=0$ row is an algebraic null control.}
+\label{tab:p4}
+\begin{tabular}{rrrrrlrrlrr}
+\toprule
+beta & n_pairs & predicted & ratio_k_mean & ratio_k_sd & ratio_k_ci & k_contains_pred & ratio_rate_mean & ratio_rate_ci & rate_contains_pred & log_error_k \\
+\midrule
+0.000000 & 8 & 1.000000 & 1.016000 & 0.197000 & [0.90, 1.15] & True & 0.991000 & [0.89, 1.09] & True & 0.016000 \\
+0.500000 & 8 & 2.000000 & 2.064000 & 0.286000 & [1.88, 2.26] & True & 2.139000 & [1.99, 2.28] & True & 0.031000 \\
+0.900000 & 8 & 10.000000 & 13.560000 & 1.460000 & [12.63, 14.52] & False & 15.477000 & [14.48, 16.41] & False & 0.305000 \\
+0.950000 & 8 & 20.000000 & 23.409000 & 2.432000 & [22.00, 25.10] & False & 27.820000 & [25.99, 29.56] & False & 0.157000 \\
+\bottomrule
+\end{tabular}
+\end{table}
